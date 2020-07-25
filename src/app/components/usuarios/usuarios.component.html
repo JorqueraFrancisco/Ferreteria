@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Usuario</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let item of usuarios" >
+        <th scope="row"  *ngIf="item.tipo == 'vendedor'">{{item.usuario}}</th>
+        <td *ngIf="item.tipo == 'vendedor'">{{item.nombre}}</td>
+        <td *ngIf="item.tipo == 'vendedor'"><button type="button" class="btn btn-primary" (click)="metas(item.usuario)" >Establecer metas</button></td>
+      </tr>
+  
+    </tbody>
+  </table>

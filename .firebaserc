@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "plataforma-educativa-28877": {
+      "hosting": {
+        "ferreteria": [
+          "plataforma-educativa-28877"
+        ]
+      }
+    }
+  }
+}

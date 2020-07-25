@@ -1,0 +1,85 @@
+
+    <form class="row" (ngSubmit) = "cambiarNumeroDeDocumentos(numeroDoc.value) " >
+    <div class="col-6 col-sm-4 m-2">     
+        <input type="number" class="form-control"  #numeroDoc   placeholder="Numero de documentos">
+    </div>
+    <div class="col-6 col-sm-4 m-2">
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+    </div>
+    <div class="col  m-2">
+        {{numeroDeDocumentos}}
+    </div>
+    </form>
+    <!-- Force next columns to break to new line at md breakpoint and up -->
+    <div class="w-100 d-none d-md-block"></div>
+
+    <form class="row" (ngSubmit) = "cambiarTotalDeVentas(numeroVentas.value)" >
+    <div class="col-6 col-sm-4  m-2">     
+        <input type="number" class="form-control"  #numeroVentas  placeholder="Monto total de ventas">
+    </div>
+    <div class="col-6 col-sm-4  m-2">
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+    </div>
+  
+    <div class="col  m-2">
+        {{montoTotalDeVentas}}
+    </div>
+    </form>
+    <!-- Force next columns to break to new line at md breakpoint and up -->
+    <div class="w-100 d-none d-md-block"></div>
+
+    <form class="row" (ngSubmit) = "cambiarEfectividad(numeroEfectividad.value)" >
+    <div class="col-6 col-sm-4  m-2" >     
+        <input type="number" class="form-control" #numeroEfectividad placeholder="Efectividad">
+    </div>
+    <div class="col-6 col-sm-4  m-2">
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+    </div>
+    <div class="col  m-2">
+        {{efectividad}}
+    </div>
+    </form> 
+    <!-- Force next columns to break to new line at md breakpoint and up -->    
+    <div class="w-100 d-none d-md-block"></div>
+
+    <form class="row" (ngSubmit) = "cambiarServicio(numeroServicio.value)">
+    <div class="col-6 col-sm-4  m-2">     
+        <input type="number" class="form-control" #numeroServicio  placeholder="Servicio">
+    </div>
+    <div class="col-6 col-sm-4  m-2">
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+    </div>
+  
+    <div class="col  m-2">
+        {{servicio}}
+    </div>
+    </form>
+    <!-- Force next columns to break to new line at md breakpoint and up -->
+    <div class="w-100 d-none d-md-block"></div>
+  
+    <form class="row" (ngSubmit) = "cambiarEficiencia(numeroEficiencia.value)">
+    <div class="col-6 col-sm-4  m-2">     
+        <input type="number" class="form-control" #numeroEficiencia  placeholder="Eficiencia">
+    </div>
+    <div class="col-6 col-sm-4  m-2">
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+    </div>
+  
+    <div class="col  m-2">
+        {{eficiencia}}
+    </div>
+    </form>
+     <!-- Force next columns to break to new line at md breakpoint and up -->
+    <div class="w-100 d-none d-md-block"></div>
+  
+    <form class="row" (ngSubmit) = "cambiarCumplimiento(numeroCumplimiento.value)">
+    <div class="col-6 col-sm-4  m-2">     
+        <input type="number" class="form-control" #numeroCumplimiento  placeholder="Cumplimiento">
+    </div>
+    <div class="col-6 col-sm-4  m-2">
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+    </div>
+    <div class="col  m-2">
+        {{cumplimiento}}
+    </div>
+    </form>
