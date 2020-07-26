@@ -24,7 +24,13 @@ export class IngresarDatosComponent {
 
   constructor(private firebase:FirebaseService, private calculos:CalculosService) { }
  
-  addfile(event) {    
+  addfile(event) { 
+
+    Swal.fire({
+      allowOutsideClick: false,
+      icon: 'info',
+      text:'Cargando los datos, espere...'
+    })
 
     this.file= event.target.files[0];     
     let fileReader = new FileReader();    
@@ -163,28 +169,29 @@ export class IngresarDatosComponent {
             } 
           }        
          })
-         console.log('sumado: '+ listaEstadisticasUsuariosSumados.length,'nuevos: '+ listaEstadisticasUsuariosNuevos.length)
-         console.log(listaEstadisticasUsuariosSumados)
-         console.log(listaEstadisticasUsuariosNuevos)
-         if (listaEstadisticasUsuariosSumados.length == 0) {
-           return
-         }else{
-           this.firebase.guardarEstadisticaUsuariosSumados(listaEstadisticasUsuariosSumados)
-         }
-         if (listaEstadisticasUsuariosNuevos.length == 0) {
-           return
-         }else{
-           this.firebase.guardarEstadisticaUsuariosNuevos(listaEstadisticasUsuariosNuevos)
-         }
-         listaEstadisticasUsuariosSumados = []
-         listaEstadisticasUsuariosNuevos = []
+            console.log('sumado: '+ listaEstadisticasUsuariosSumados.length,'nuevos: '+ listaEstadisticasUsuariosNuevos.length)
+            console.log(listaEstadisticasUsuariosSumados)
+            console.log(listaEstadisticasUsuariosNuevos)
+            if (listaEstadisticasUsuariosSumados.length == 0) {
+              return
+            }else{
+              this.firebase.guardarEstadisticaUsuariosSumados(listaEstadisticasUsuariosSumados)
+            }
+            if (listaEstadisticasUsuariosNuevos.length == 0) {
+              return
+            }else{
+              this.firebase.guardarEstadisticaUsuariosNuevos(listaEstadisticasUsuariosNuevos)
+            }
+            listaEstadisticasUsuariosSumados = []
+            listaEstadisticasUsuariosNuevos = []
+            Swal.fire({
+              icon: 'success',
+              title:'Registro con exito'
+            })
+          }
+        ) 
       }
-     )
-    
-
-     
-   }
-
+  
   }    
 
   sumaEstadistica(valor1 : number, valor2:number){

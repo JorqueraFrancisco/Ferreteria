@@ -41,11 +41,12 @@ export class MetasComponent  {
   gradient: boolean = true;
   showLegend: boolean = true;
   showXAxisLabel: boolean = false;
-  yAxisLabel1: string = 'Total venta';
+  yAxisLabel1: string = 'Total ventas';
   yAxisLabel2: string = 'Efectividad';
   yAxisLabel3: string = 'Servicio';
   yAxisLabel4: string = 'Eficiencia';
   yAxisLabel5: string = 'Cumplimiento';
+  yAxisLabel6: string = 'Numero de documentos';
   showYAxisLabel: boolean = true;
   xAxisLabel: string = 'Population';
   view: any[] = [700, 400];

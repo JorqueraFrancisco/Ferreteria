@@ -4,6 +4,7 @@ import { Color, Label } from 'ng2-charts';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { CalculosService } from 'src/app/services/calculos.service';
 import { EstadisticaModel } from '../../../models/estadistica.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reportes',
@@ -30,7 +31,9 @@ export class ReportesComponent {
              
   
   constructor(private firebase : FirebaseService, private calculos: CalculosService) { 
-   
+
+    Swal.showLoading();
+
     this.firebase.obtenerUsuarios().subscribe(data =>{ data.forEach(
       docUsuario => {
         this.firebase.obtenerMetasUsuarios(this.extraerPeriodo(new Date)).subscribe(
@@ -83,6 +86,7 @@ export class ReportesComponent {
         console.log( this.montoTotalVentasPeriodoActual )
         this.lineChartData[0]['data'][6] = this.montoTotalVentasPeriodoActual
         this.mostrarGrafico = true
+        Swal.close()
       }
     )
   }

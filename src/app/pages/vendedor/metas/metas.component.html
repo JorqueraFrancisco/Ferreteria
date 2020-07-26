@@ -4,22 +4,22 @@
     <h1 >Estadísticas al periodo <small>{{periodo}}</small></h1>
   </div>
     <div class="row" align="center">
-        <div class="col">
-            <ngx-charts-bar-horizontal
-            [view]="view"
-            [scheme]="colorScheme"
-            [results]="graficoNumeroDocumentos"
-            [gradient]="gradient"
-            [xAxis]="showXAxis"
-            [yAxis]="showYAxis"
-            [legend]="showLegend"
-            [showXAxisLabel]="showXAxisLabel"
-            [showYAxisLabel]="showYAxisLabel"
-            [xAxisLabel]="xAxisLabel"
-            [yAxisLabel]="yAxisLabel1"
-            >
-          </ngx-charts-bar-horizontal>
-        </div>
+      <div class="col" >
+      <ngx-charts-bar-horizontal
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="graficoMontoTotalVentas"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel1"
+      >
+    </ngx-charts-bar-horizontal>
+  </div>
         <div class="col" >
             <ngx-charts-bar-horizontal
             [view]="view"
@@ -96,20 +96,22 @@
       </ngx-charts-bar-horizontal>
        </div>
        <div class= "col">
-        <ngx-charts-bar-horizontal
-        [view]="view"
-        [scheme]="colorScheme"
-        [results]="graficoMontoTotalVentas"
-        [gradient]="gradient"
-        [xAxis]="showXAxis"
-        [yAxis]="showYAxis"
-        [legend]="showLegend"
-        [showXAxisLabel]="showXAxisLabel"
-        [showYAxisLabel]="showYAxisLabel"
-        [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel5"
-        >
-      </ngx-charts-bar-horizontal>
+       
+          <ngx-charts-bar-horizontal
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="graficoNumeroDocumentos"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel6"
+          >
+        </ngx-charts-bar-horizontal>
+      
        </div>
     </div>
   
