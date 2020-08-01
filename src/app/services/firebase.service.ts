@@ -180,7 +180,7 @@ export class FirebaseService {
   
   }
   obtenerMetasUsuarios ( periodo: string ){
-   return this.firestore.collection('metas').valueChanges()
+   return this.firestore.collection('metas',ref => ref.where("periodo", "==", periodo)).valueChanges()
   }
     
   cambiarMeta( tipoMeta : string, valor: number, uid:string ,fecha: string){

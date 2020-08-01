@@ -1,3 +1,19 @@
-<div class="col-md-8 form-group">        
-    <input type="file" class="form-control" (change)="addfile($event)" placeholder="Upload file" accept=".csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">        
-  </div>  
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8 d-flex justify-content-center">
+      <form method="post">
+
+        <input type="file"  (change)=onFileSelected($event) placeholder="Upload file"
+          accept=".csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+      </form>
+    </div>
+    <div class="col">
+      <div class="input-container">
+        
+        <button class="btn btn-primary" type="button" (click)="addfile()"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Cargar datos</button>     
+      </div>
+    </div>
+  </div>
+
+  
+</div>

@@ -1,59 +1,54 @@
-
 <div class="container" *ngIf="mostrarGrafico">
 
-    <div class="row">
-        <div class="col-md-5">
-    
-            <div style="display: block;">
-                <canvas baseChart width="700" height="700"
-                  [datasets]="lineChartData"
-                  [labels]="lineChartLabels"
-                  [options]="lineChartOptions"
-                  [colors]="lineChartColors"
-                  [legend]="lineChartLegend"
-                  [chartType]="lineChartType"
-                  [plugins]="lineChartPlugins">
-                </canvas>
-            </div>
-            
-        </div>   
-    </div>
-    
+  <div class="row">
+    <div class="col-md-5">
 
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Usuario</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Meta</th>
-            <th scope="col">Numero de documentos</th>
-            <th scope="col">Monto total de ventas</th>
-            <th scope="col">Efectividad</th>
-            <th scope="col">Servicio</th>
-            <th scope="col">Eficiencia</th>
-            <th scope="col">Cumplimiento</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of EstadisticaUsuarioPeriodoActual">
-            <td>{{item.usuario}}</td>
-            <td>{{item.nombre}}</td>
-            <td>{{item.metaMontoTotalVentas}}</td>
-            <td>{{item.numeroDocumentos}}</td>
-            <td>{{ item.montoTotalDeVentas | currency:'$ ':'symbol-narrow':'.0-0'}}</td>
-            <td>{{item.efectividad}}</td>
-            <td>{{item.servicio }}</td>
-            <td>{{item.eficiencia }}</td>
-            <td>{{item.montoTotalDeVentas / item.metaMontoTotalVentas}}</td>
-            
-            
-          </tr>
-        
-        
-        </tbody>
-      </table>
+      <div style="display: block;">
+        <canvas baseChart width="700" height="700" [datasets]="lineChartData" [labels]="lineChartLabels"
+          [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+
+    </div>
+    <div class="col-md-5">
+      <button class="btn btn-danger " type="button" (click)="generarPdf()"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> GENERAR PDF</button>
+    </div>
+  </div>
+
+
+  <table class="table table-hover" id="tabla">
+    <thead>
+      <tr>
+        <th scope="col">Usuario</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Meta</th>
+        <th scope="col">Numero de documentos</th>
+        <th scope="col">Monto total de ventas</th>
+        <th scope="col">Efectividad</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Eficiencia</th>
+        <th scope="col">Cumplimiento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of EstadisticaUsuarioPeriodoActual">
+        <td>{{item.usuario}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.metaMontoTotalVentas}}</td>
+        <td>{{item.numeroDocumentos}}</td>
+        <td>$ {{item.montoTotalDeVentas}}</td>
+        <td>{{item.efectividad}}</td>
+        <td>{{item.servicio }}</td>
+        <td>{{item.eficiencia }}</td>
+        <td *ngIf="item.metaMontoTotalVentas == 0">0 </td>
+        <td *ngIf="item.metaMontoTotalVentas != 0">{{item.montoTotalDeVentas / item.metaMontoTotalVentas}}</td>
+
+
+      </tr>
+
+
+    </tbody>
+  </table>
 
 </div>
-
-
-  
